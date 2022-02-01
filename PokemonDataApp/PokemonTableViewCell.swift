@@ -19,9 +19,6 @@ class PokemonTableViewCell: UITableViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        pokemonImageView.backgroundColor = .red
-        
     }
     
 }

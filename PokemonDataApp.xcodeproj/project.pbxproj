@@ -14,6 +14,7 @@
 		0141A5B027A6C2DE008F2421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0141A5AF27A6C2DE008F2421 /* Assets.xcassets */; };
 		0141A5B327A6C2DE008F2421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0141A5B127A6C2DE008F2421 /* LaunchScreen.storyboard */; };
 		016FEFCF27A6D57F00AA0B9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016FEFCE27A6D57F00AA0B9A /* HomeViewController.swift */; };
+		0173311F27A965B50052494B /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0173311E27A965B50052494B /* Pokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0141A5B227A6C2DE008F2421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0141A5B427A6C2DE008F2421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		016FEFCE27A6D57F00AA0B9A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0173311E27A965B50052494B /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				01399EFE27A7F19E0073F16D /* PokemonTableViewCell.xib */,
 				01399EFC27A7ED590073F16D /* PokemonTableViewCell.swift */,
 				016FEFCE27A6D57F00AA0B9A /* HomeViewController.swift */,
+				0173311E27A965B50052494B /* Pokemon.swift */,
 				0141A5A627A6C2DA008F2421 /* AppDelegate.swift */,
 				0141A5A827A6C2DA008F2421 /* SceneDelegate.swift */,
 				0141A5AF27A6C2DE008F2421 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0173311F27A965B50052494B /* Pokemon.swift in Sources */,
 				0141A5A727A6C2DA008F2421 /* AppDelegate.swift in Sources */,
 				01399EFD27A7ED590073F16D /* PokemonTableViewCell.swift in Sources */,
 				0141A5A927A6C2DA008F2421 /* SceneDelegate.swift in Sources */,
