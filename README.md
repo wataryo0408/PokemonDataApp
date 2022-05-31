@@ -1,4 +1,4 @@
 # PokemonDataApp
 
 
-./IMG_0960.PNG
+![サンプル](./IMG_0960.PNG)
