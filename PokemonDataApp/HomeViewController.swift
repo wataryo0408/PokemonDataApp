@@ -7,11 +7,13 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class HomeViewController: UIViewController{
     
     private let cellId = "cellId"
-    var pokemonList = [pokemon]()
+    var pokemonList = [Models]()
+    var pokemonData: Pokemon?
     var pokemonTableView = UITableView()
     
     override func viewDidLoad() {
@@ -19,6 +21,7 @@ class HomeViewController: UIViewController{
         
         setTableView()
         setData()
+        request()
     }
 
     func setTableView(){
@@ -35,10 +38,13 @@ class HomeViewController: UIViewController{
     
     func setData(){
         
-        let pokemon1 = pokemon(id: 1, name: "フシギソウ", imageUrl: getImageByUrl(url: "https://sp2.raky.net/poke/icon96/n1.gif"))
-        let pokemon2 = pokemon(id: 2, name: "フシギソウ", imageUrl: getImageByUrl(url: "https://sp2.raky.net/poke/icon96/n2.gif"))
-        let pokemon3 = pokemon(id: 3, name: "フシギバナ", imageUrl: getImageByUrl(url: "https://sp2.raky.net/poke/icon96/n3.gif"))
-        pokemonList = [pokemon1, pokemon2, pokemon3]
+//        let pokemon1 = Models(id: 1, name: "フシギソウ", imageUrl: "https://sp2.raky.net/poke/icon96/n1.gif")
+//        let pokemon2 = Models(id: 2, name: "フシギソウ", imageUrl: "https://sp2.raky.net/poke/icon96/n2.gif")
+//        let pokemon3 = Models(id: 3, name: "フシギバナ", imageUrl: "https://sp2.raky.net/poke/icon96/n3.gif")
+//        pokemonList = [pokemon1, pokemon2, pokemon3]
+        
+        
+        
     }
     
     func getImageByUrl(url: String) -> UIImage{
@@ -52,6 +58,30 @@ class HomeViewController: UIViewController{
         }
         return UIImage()
     }
+    
+    
+    
+    func request(){
+        AF.request("https://sp2.raky.net/poke/icon96/n1.gif",
+                   method: .get,
+                   parameters: nil,
+                   encoding: JSONEncoding.default,
+                   headers: nil)
+            .response { response in
+                guard let data = response.data else { return }
+                
+                do{
+                    self.pokemonData = try JSONDecoder().decode(Pokemon.self, from: data)
+    //                return pokemon
+    //                print(pokemon)
+    //                print(type(of: pokemon))
+                }catch{
+                    print("error")
+                }
+            }
+    }
+    
+    func 
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
@@ -74,7 +104,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = pokemonTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PokemonTableViewCell
         cell.pokemonIdLabel.text = "No.\(pokemonList[indexPath.row].id)"
         cell.pokemonNameLabel.text = pokemonList[indexPath.row].name
-        cell.pokemonImageView.image = pokemonList[indexPath.row].imageUrl
+        cell.pokemonImageView.image = getImageByUrl(url: pokemonList[indexPath.row].imageUrl)
         
         
         
